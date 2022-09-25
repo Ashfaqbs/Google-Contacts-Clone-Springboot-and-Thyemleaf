@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Show Contacts</title>
+</head>
+<body>
+
+	<section>
+		<div class="card mr-3 ml-3">
+
+
+			<div class="card-body"></div>
+			<h1 class="text-center">Update Your Contact</h1>
+
+			<div class="container-fluid mt-1">
+
+
+				<div class="row">
+
+					<div class="col-md-10 offset-md-1">
+
+
+						<form action="" th:object="${contact}"
+							enctype="multipart/form-data" method="post"
+							th:action="@{/user/process-update}" class="mt-2">
+
+ 
+							<input type="hidden" th:value="${contact.id}" name="id">
+
+
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fa fa-plus"></i>
+									</div>
+								</div>
+								<input th:value="${contact.name}" type="text" id="firstname"
+									name="name" placeholder="Enter Name here " class="form-control"
+									required>
+
+							</div>
+
+
+
+							<div class="input-group mt-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fas fa-user-alt "></i>
+									</div>
+								</div>
+								<input th:value="${contact.nickname}" type="text" id="Nickname"
+									name="nickname" placeholder="Enter Nickname here "
+									class="form-control" required>
+							</div>
+
+
+							<div class="input-group mt-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fas fa-phone "></i>
+									</div>
+								</div>
+								<input th:value="${contact.phNo}" type="text" id="phno"
+									name="phNo" placeholder="Enter phNo here " class="form-control"
+									required>
+							</div>
+
+
+							<div class="input-group mt-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">@</div>
+								</div>
+								<input th:value="${contact.email}" type="text" id="email"
+									name="email" placeholder="Enter email here "
+									class="form-control" required>
+							</div>
+
+
+
+							<div class="input-group mt-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fa fa-briefcase "></i>
+
+									</div>
+								</div>
+								<input th:value="${contact.work}" type="text" id="work"
+									name="work" placeholder="Enter work here " class="form-control"
+									required>
+							</div>
+
+							<div class="form-group mt-3">
+								<textarea th:utext="${contact.description}"
+									placeholder="Enter Contact Description" id="mytextarea"
+									name="description" class="form-control" rows="10"></textarea>
+
+
+							</div>
+							<div class="container mt-2 text-center">
+								<img class="image-fluid"
+									style="width: 250px; height: 250px; border-radius: 50%;" src=""
+									th:src="@{'/image/'+${contact.imageUrl}}" alt="" />
+
+								<p class="<text-secondary></text-secondary>">Choose a new
+									Profile pic</p>
+							</div>
+
+							<div class="custom-file mt-3">
+								<input type="file" name="profileImage" />
+
+							</div>
+
+							<div class="container text-center">
+								<button class="btn btn-outline-primary">Save Contact</button>
+
+							</div>
+
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		<script
+			src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+			referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+				selector : '#mytextarea'
+			});
+		</script>
+	</section>
+
+
+</body>
+</html>
