@@ -1,2 +1,2 @@
-# SmartContactManager_SpringbBot
+# Google Contact Manager Clone(ContactManager)Made from  Springboot & Thyemleaf
 This is spring boot web application created with Springboot, Spring data JPA ,Spring Security and Theymleaf  , can perform adding , removing , updating of user contacts who has logged in currently, and other important real time functionalities include forgot password , login and logout of the user   , encoding User Password by BcryptPasswordEncoder using Spring Security
